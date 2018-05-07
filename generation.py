@@ -32,6 +32,7 @@ def generate(n_nodes, get_vector, similarity_func, edge_func):
     G = nx.Graph()
     for node in range(n_nodes):
         G.add_node(node)
+        G.nodes[node]["latent"] = tuple(node_vecs[node])
 
     # For each pair of nodes, decide whether to draw an edge between them, and
     # what sign the edge should be
