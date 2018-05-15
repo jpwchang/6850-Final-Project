@@ -42,6 +42,6 @@ def generate(n_nodes, get_vector, similarity_func, edge_func):
         sim = similarity_func(node_vecs[v1], node_vecs[v2])
         edge_wt = edge_func(sim)
         if edge_wt != 0:
-            G.add_edge(v1, v2, weight=edge_wt)
+            G.add_edge(v1, v2, weight=edge_wt, sim=sim)
 
     return G
